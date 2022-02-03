@@ -1,6 +1,11 @@
 ## Interface: 30300
-## Author: https://t.me/boredatom
+## Author: https://t.me/boredatom , Trimitor
 ## Title: Flash Window
 ## Notes: Require patched Wow.exe file or FlashWindow() API
+## Notes-ruRU: Требуется пропатченный WoW.exe или FlashWindow() API
+## SavedVariables: FWDB
+## OptionalDeps: Ace3
 
-main.lua
+libs.xml
+fw.lua
+

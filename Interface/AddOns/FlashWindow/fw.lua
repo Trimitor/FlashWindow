@@ -64,15 +64,17 @@ local options = {
 local defaults = {
     profile = {
         enabled = true,
-        defaultEvents = {
+        --[[defaultEvents = {
             
-        },
+        },]]
     },
 }
 
 function FW:OnInitialize()
     self.db = LibStub("AceDB-3.0"):New("FWDB", defaults, true)
-    self.db.profile.defaultEvents = self.db.profile.defaultEvents or edef;
+    if (self.db.profile.defaultEvents == nil ) then
+        self.db.profile.defaultEvents = edef;
+    end
 
     LibStub("AceConfig-3.0"):RegisterOptionsTable("FlashWindow", options)
     self.optionsFrame = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("FlashWindow", "FlashWindow")

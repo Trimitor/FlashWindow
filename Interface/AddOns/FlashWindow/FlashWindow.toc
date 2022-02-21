@@ -2,7 +2,15 @@
 ## Author: https://t.me/boredatom , Trimitor
 ## Title: Flash Window
 ## Notes: Require patched Wow.exe file or FlashWindow() API
+## Notes-deDE: Benötigt gepatchte WoW.exe oder FlashWindow() API
+## Notes-frFR: Nécessite l'API WoW.exe ou FlashWindow() API
+## Notes-esES: Requiere WoW.exe parcheado o FlashWindow() API
+## Notes-esMX: Requiere WoW.exe parcheado o FlashWindow() API
 ## Notes-ruRU: Требуется пропатченный WoW.exe или FlashWindow() API
+## Notes-koKR: 패치된 WoW.exe 또는 FlashWindow() API 필요
+## Notes-enCN: 需要修补 WoW.exe 或 FlashWindow() API
+## Notes-zhCN: 需要修补 WoW.exe 或 FlashWindow() API
+## Notes-zhTW: 需要修補 WoW.exe 或 FlashWindow() API
 ## SavedVariables: FWDB
 ## OptionalDeps: Ace3
 

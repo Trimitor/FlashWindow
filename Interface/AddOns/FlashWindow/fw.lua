@@ -1,4 +1,5 @@
 local FW = LibStub("AceAddon-3.0"):NewAddon("FlashWindow", "AceEvent-3.0", "AceHook-3.0", "AceConsole-3.0")
+local L = LibStub("AceLocale-3.0"):GetLocale("FW")
 
 local FlashWindow = FlashWindow;
 
@@ -26,14 +27,14 @@ local options = {
     args = {
         warning = {
             order = 1,
-            name = "|cffff0000It looks like the client is missing the API for flashing the window. Make sure you are using the patched wow.exe",
+            name = "|cffff0000".. L["It looks like the client is missing the API for flashing the window. Make sure you are using the patched wow.exe"],
             type = "description",
             hidden = true,
         },
         enabled = {
             order = 2,
-            name = "Enable",
-            desc = "Enables / disables the addon",
+            name = L["Enable"],
+            desc = L["Enables / disables the addon"],
             type = "toggle",
             set = "toggleFW",
             get = "isToggleFW",
@@ -43,8 +44,8 @@ local options = {
         defaultEvents = {
             order = 3,
             width = "full",
-            name = "Event List",
-            desc = "Input event trigger",
+            name = L["Event List"],
+            desc = L["Enter event trigger"],
             type = "input",
             multiline = 17,
             get = "getEventList",
@@ -53,7 +54,7 @@ local options = {
         },
         resetbtn = {
             order = 4,
-            name = "Reset to default",
+            name = L["Reset to default"],
             type = "execute",
             func = "byDefault",
             hidden = false,
@@ -105,12 +106,12 @@ function FW:setEventList(info, value)
 
     self.db.profile.defaultEvents = array
     self:InitEventList()
-    DEFAULT_CHAT_FRAME:AddMessage("[FlashWindow] EventList has been updated!")
+    DEFAULT_CHAT_FRAME:AddMessage(L["[FlashWindow] EventList has been updated!"])
 end
 
 function FW:byDefault()
     self.db.profile.defaultEvents = edef;
-    DEFAULT_CHAT_FRAME:AddMessage("[FlashWindow] EventList has been set to default!")
+    DEFAULT_CHAT_FRAME:AddMessage(L["[FlashWindow] EventList has been set to default!"])
 end
 
 function FW:isToggleFW(info)
@@ -129,7 +130,7 @@ end
 
 function FW:OnEnable()
     if not FlashWindow then
-        DEFAULT_CHAT_FRAME:AddMessage("[FlashWindow] Wow.exe patch not applied!")
+        DEFAULT_CHAT_FRAME:AddMessage(L["[FlashWindow] Wow.exe patch not applied!"])
         self.db.profile.enabled = false
         options.args.enabled.disabled = true
         options.args.warning.hidden = false

@@ -15,5 +15,5 @@
 ## OptionalDeps: Ace3
 
 libs.xml
+locales.xml
 fw.lua
-
